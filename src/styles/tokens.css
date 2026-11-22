@@ -1,0 +1,88 @@
+/* =====================================================================
+ * Design tokens — Mini Inventory Manager
+ * Estilo "almacén": verde bosque, cartón claro, acentos naranja de
+ * señalización y etiquetas de color por categoría.
+ * Todos los componentes usan estos valores; evita colores sueltos.
+ * ===================================================================== */
+:root {
+  /* ---------- Color · neutros ---------- */
+  --color-bg: #f3efe7;             /* fondo de la página (cartón claro) */
+  --color-surface: #fffdf9;        /* tarjetas */
+  --color-surface-alt: #f7f3eb;    /* encabezados de tabla, filas alternas */
+  --color-ink: #1c2a22;            /* texto principal */
+  --color-ink-soft: #5d6b62;       /* texto secundario */
+  --color-border: #e4dccd;         /* bordes suaves */
+  --color-border-strong: #c9bca4;  /* bordes de inputs */
+
+  /* ---------- Color · marca ---------- */
+  --color-brand: #1f3d2f;          /* verde bosque: barra superior */
+  --color-on-brand: #f5efe3;
+  --color-on-brand-soft: rgba(245, 239, 227, 0.72);
+  --color-primary: #2d6a4f;        /* botón principal */
+  --color-primary-hover: #23573f;
+  --color-primary-soft: #e6f0ea;   /* hover de filas */
+  --color-accent: #f4a259;         /* naranja: resaltados */
+  --color-accent-soft: #fdebd9;    /* fila / formulario en edición */
+  --color-accent-ink: #9a4508;     /* texto sobre naranja suave */
+
+  /* ---------- Color · semánticos ---------- */
+  --color-danger: #b3261e;
+  --color-danger-hover: #93201a;
+  --color-danger-soft: #fbe5e3;
+  --color-focus: #c2570c;          /* anillo de foco con teclado */
+
+  /* ---------- Color · categorías (texto / fondo) ---------- */
+  --cat-tecnologia: #2b5fab;  --cat-tecnologia-bg: #e3ecfa;
+  --cat-hogar: #b5532c;       --cat-hogar-bg: #fbe6dc;
+  --cat-oficina: #3f6b0d;     --cat-oficina-bg: #e7f1d9;
+  --cat-otros: #7a4bb0;       --cat-otros-bg: #efe6f8;
+
+  /* ---------- Tipografía ---------- */
+  --font-display: "Unbounded", "Figtree", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-md: 1rem;      /* 16px */
+  --text-lg: 1.25rem;   /* 20px */
+  --text-xl: 1.75rem;   /* 28px */
+  --text-2xl: 2.25rem;  /* 36px */
+
+  /* ---------- Espaciado (base 4px) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* ---------- Bordes ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* ---------- Sombras ---------- */
+  --shadow-sm: 0 1px 2px rgba(28, 42, 34, 0.08);
+  --shadow-md: 0 1px 0 var(--color-border), 0 12px 32px -20px rgba(28, 42, 34, 0.45);
+
+  /* ---------- Movimiento ---------- */
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Color por categoría: cualquier elemento con data-cat recibe --cat-color y --cat-bg */
+[data-cat="tecnologia"] { --cat-color: var(--cat-tecnologia); --cat-bg: var(--cat-tecnologia-bg); }
+[data-cat="hogar"]      { --cat-color: var(--cat-hogar);      --cat-bg: var(--cat-hogar-bg); }
+[data-cat="oficina"]    { --cat-color: var(--cat-oficina);    --cat-bg: var(--cat-oficina-bg); }
+[data-cat="otros"]      { --cat-color: var(--cat-otros);      --cat-bg: var(--cat-otros-bg); }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}
